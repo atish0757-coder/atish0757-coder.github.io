@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Atish Adhikari</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="about-bg">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-light" href="../Index.HTML">Atish Adhikari</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Resume.html">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="Aboutme.html">About Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENT -->
+    <main class="py-5">
+        <div class="container py-4">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-5 text-center">
+                    <img src="Atish_Adhikari in the river.jpg"
+                         alt="Atish Adhikari in the river"
+                         class="img-fluid rounded shadow-lg about-img">
+                </div>
+                <div class="col-md-7">
+                    <h1 class="mb-3">About Me</h1>
+                    <p class="lead">
+                        I am an accounting student with a strong foundation in applied accounting,
+                        research, and financial analysis. I enjoy solving problems, working with data,
+                        and understanding how financial decisions shape real-world outcomes.
+                    </p>
+                    <p>
+                        My interests include forensic accounting, financial reporting, and investment finance.
+                        I have experience in community development work and hope to use my education to
+                        contribute to Nepal’s economic progress and transparency in financial systems.
+                    </p>
+                    <p>
+                        Outside of academics, I enjoy learning new tools, improving my writing and presentation
+                        skills, and exploring ways to make complex financial concepts easier for others to understand.
+                    </p>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3 class="h5">Values</h3>
+                    <ul class="small">
+                        <li>Integrity and honesty in all financial work</li>
+                        <li>Accuracy and attention to detail</li>
+                        <li>Continuous learning and improvement</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5">Current Goals</h3>
+                    <ul class="small">
+                        <li>Develop strong investment and valuation skills</li>
+                        <li>Build a solid foundation in data analysis</li>
+                        <li>Prepare for a future career in investment banking</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h5">Fun Facts</h3>
+                    <ul class="small">
+                        <li>Interested in both numbers and storytelling</li>
+                        <li>Enjoys research projects and presentations</li>
+                        <li>Motivated by the idea of serving the community</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-4 bg-dark text-center text-light small">
+        <div class="container">
+            &copy; <span id="aboutYear"></span> Atish Adhikari
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('aboutYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
