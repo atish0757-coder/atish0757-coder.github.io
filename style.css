@@ -1,0 +1,81 @@
+/* Global typography */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #333;
+}
+
+/* Layout-specific padding for fixed navbar */
+body.homebg {
+    padding-top: 0;              /* no gap above hero on home page */
+    background: #0b1524;         /* same dark tone as hero so it blends */
+}
+
+body.resume-bg,
+body.about-bg {
+    padding-top: 70px;           /* keep space for navbar on other pages */
+}
+
+/* Links */
+a {
+    color: maroon;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+a:visited {
+    color: blue;
+}
+
+/* Utility classes (from your original file) */
+.resumelistheading {
+    font-weight: bold;
+    font-style: normal;
+}
+.underline { text-decoration: underline; }
+.bold { font-weight: bold; }
+.justify { text-align: justify; }
+
+/* Home page hero */
+.hero-section {
+    background: radial-gradient(circle at top left, #2b4f81, #111);
+    color: #fff;
+    min-height: 60vh;
+
+    /* push content below navbar, but keep background starting at very top
+       so there is no white bar */
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+}
+
+.section-title {
+    font-weight: 700;
+}
+
+/* Profile + about images */
+.profile-img {
+    max-width: 260px;
+    border-radius: 50%;
+}
+.about-img {
+    max-width: 320px;
+}
+
+/* Resume layout spacing */
+.resume-layout {
+    margin-top: 90px; /* extra room for navbar */
+    margin-bottom: 40px;
+}
+
+/* Small tweaks for cards */
+.card-title {
+    font-weight: 600;
+}
+a .navbar-brand{
+    color: #714d4d;
+}
+a .linkedin{
+    font-size: 20px;
+}
