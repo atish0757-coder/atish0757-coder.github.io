@@ -162,6 +162,7 @@
 
         function startGame() {
             secretNumber = Math.floor(Math.random() * 100) + 1;
+            
             attemptsLeft = 7;
             statusEl.textContent = 'Game started! Make your first guess.';
             statusEl.className = 'status';
