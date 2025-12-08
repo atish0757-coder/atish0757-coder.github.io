@@ -1,0 +1,98 @@
+/* Scratch page base styles */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #050816; /* custom background color */
+    color: #e5e7eb;
+}
+
+/* top nav back link */
+.top-nav {
+    background: #0f172a;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-nav a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+/* hero section (div 1) */
+.hero {
+    padding: 3rem 1.25rem 2rem;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+.hero p {
+    max-width: 700px;
+    margin: 0.5rem auto 0;
+}
+
+/* content wrapper (div 2) */
+.content-wrapper {
+    max-width: 1050px;
+    margin: 0 auto 3rem;
+    padding: 0 1.25rem 3rem;
+}
+
+/* panels (div 3+ for layout blocks) */
+.panel {
+    background: #0b1120;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #1f2937;
+}
+
+/* lists */
+.panel ol {
+    margin-left: 1.25rem;
+}
+.panel ul {
+    margin-left: 1.5rem;
+}
+
+/* anchor jump section */
+#tableau {
+    scroll-margin-top: 80px;
+}
+
+/* media elements */
+.embed-wrapper {
+    margin-top: 1rem;
+}
+.embed-wrapper iframe {
+    width: 100%;
+    min-height: 315px;
+    border: none;
+}
+
+/* tableau container */
+.tableauPlaceholder {
+    width: 100%;
+    height: 600px;
+    margin-top: 1rem;
+}
+
+/* callout link to app */
+.app-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    background: #38bdf8;
+    color: #020617;
+    font-weight: 600;
+    text-decoration: none;
+}
+.app-link:hover {
+    background: #0ea5e9;
+}
