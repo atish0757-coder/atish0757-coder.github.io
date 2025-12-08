@@ -7,13 +7,14 @@ body {
 
 /* Layout-specific padding for fixed navbar */
 body.homebg {
-    padding-top: 0;              /* no gap above hero on home page */
-    background: #0b1524;         /* same dark tone as hero so it blends */
+    padding-top: 0;              /* home page hero touches top */
+    background: #0b1524;         /* dark tone so hero blends */
 }
 
 body.resume-bg,
 body.about-bg {
-    padding-top: 70px;           /* keep space for navbar on other pages */
+    padding-top: 70px;           /* space for navbar */
+    background: #f5f5f5;
 }
 
 /* Links */
@@ -26,10 +27,10 @@ a:hover {
     font-weight: bold;
 }
 a:visited {
-    color: blue;
+    color: #003399;
 }
 
-/* Utility classes (from your original file) */
+/* Utility text styles */
 .resumelistheading {
     font-weight: bold;
     font-style: normal;
@@ -43,9 +44,6 @@ a:visited {
     background: radial-gradient(circle at top left, #2b4f81, #111);
     color: #fff;
     min-height: 60vh;
-
-    /* push content below navbar, but keep background starting at very top
-       so there is no white bar */
     padding-top: 7rem;
     padding-bottom: 4rem;
 }
@@ -65,17 +63,20 @@ a:visited {
 
 /* Resume layout spacing */
 .resume-layout {
-    margin-top: 90px; /* extra room for navbar */
+    margin-top: 90px; /* extra room under navbar */
     margin-bottom: 40px;
 }
 
-/* Small tweaks for cards */
+/* Card tweaks */
 .card-title {
     font-weight: 600;
 }
-a .navbar-brand{
-    color: #714d4d;
+
+/* Navbar + social links */
+.navbar-brand {
+    color: #f8f9fa;
 }
-a .linkedin{
-    font-size: 20px;
+
+.linkedin {
+    font-size: 0.95rem;
 }
