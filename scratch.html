@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch Page | Data & Finance Playground</title>
+    <link rel="stylesheet" href="scratch.css">
+</head>
+<body>
+
+    <!-- simple nav back to professional site -->
+    <div class="top-nav">
+        <span>Scratch Page – Data & Finance Experiments</span>
+        <a href="index.html">← Back to Portfolio</a>
+    </div>
+
+    <!-- DIV #1 -->
+    <div class="hero">
+        <h1>Exploring Data, Finance, and Visual Stories</h1>
+        <p>
+            This scratch page is a sandbox where I experiment with HTML, CSS, Tableau, and small web apps.
+            Use the jump links below to explore the sections.
+        </p>
+        <p>
+            <a href="#video">Jump to YouTube video</a> ·
+            <a href="#tableau">Jump to Tableau graph</a> ·
+            <a href="#app">Jump to mini web app</a>
+        </p>
+    </div>
+
+    <!-- DIV #2 -->
+    <div class="content-wrapper">
+
+        <!-- PANEL 1: nested lists -->
+        <div class="panel">
+            <h2>How I Like to Learn New Tools</h2>
+            <p>Here is an ordered list with an unordered list inside it (requirement check ✅).</p>
+
+            <ol>
+                <li>
+                    Start with the big picture
+                    <ul>
+                        <li>What problem does this tool solve?</li>
+                        <li>Where is it used in real companies?</li>
+                    </ul>
+                </li>
+                <li>
+                    Explore hands-on tutorials
+                    <ul>
+                        <li>Recreate dashboards and financial models</li>
+                        <li>Break things and figure out how to fix them</li>
+                    </ul>
+                </li>
+                <li>
+                    Apply the tool to my own questions
+                    <ul>
+                        <li>Investment and valuation questions</li>
+                        <li>Economic development in Nepal</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <!-- PANEL 2: YouTube video -->
+        <div class="panel" id="video">
+            <h2>Favorite Style of Teaching: Visual Walkthroughs</h2>
+            <p>
+                I learn well from clear, step-by-step visual explanations. Here’s a sample YouTube tutorial
+                embedded directly on the page.
+            </p>
+
+            <div class="embed-wrapper">
+                <!-- YouTube embed -->
+                <iframe
+                    src="https://www.youtube.com/embed/hXSLLttoxOA"
+                    title="Tableau Tutorial for Beginners"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- PANEL 3: Tableau graph with on-page anchor -->
+        <div class="panel" id="tableau">
+            <h2>Interactive Tableau Graph</h2>
+            <p>
+                Below is a live Tableau visualization embedded from Tableau Public. It demonstrates how
+                dashboards can turn raw numbers into something you can explore and question.
+            </p>
+
+            <!-- Tableau Public embed -->
+            <div class='tableauPlaceholder' id='viz1'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Tableau chart'
+                             src='https://public.tableau.com/static/images/Re/RegionalSampleWorkbook/Storms/1_rss.png' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='RegionalSampleWorkbook/Storms' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                </object>
+            </div>
+        </div>
+
+        <!-- PANEL 4: link to app -->
+        <div class="panel" id="app">
+            <h2>Mini Web App: Number Guessing Game</h2>
+            <p>
+                As part of this project, I collaborated with AI to create a small web app in vanilla HTML, CSS,
+                and JavaScript. It lives on its own page, but you can open it here:
+            </p>
+            <a class="app-link" href="app.html">Play the Number Guessing Game</a>
+        </div>
+
+    </div>
+
+    <!-- load Tableau JS -->
+    <script type="text/javascript">
+        var divElement = document.getElementById('viz1');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = '600px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/tableau-2.min.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</body>
+</html>
