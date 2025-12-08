@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game | Mini Web App</title>
+    <style>
+        /* all-in-one styles for the app page */
+        :root {
+            --bg: #020617;
+            --panel: #0b1120;
+            --accent: #38bdf8;
+            --accent-dark: #0ea5e9;
+            --text-main: #e5e7eb;
+            --text-muted: #9ca3af;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, #1e293b, #020617);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .app-shell {
+            background: var(--panel);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            max-width: 480px;
+            width: 90%;
+            box-shadow: 0 20px 45px rgba(15,23,42,0.8);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        p {
+            margin: 0.4rem 0;
+        }
+
+        .muted {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            padding: 0.6rem 0.75rem;
+            border-radius: 0.6rem;
+            border: 1px solid #1f2937;
+            background: #020617;
+            color: var(--text-main);
+        }
+
+        button {
+            padding: 0.6rem 1.1rem;
+            border-radius: 0.6rem;
+            border: none;
+            background: var(--accent);
+            color: #020617;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--accent-dark);
+        }
+
+        .status {
+            margin-top: 1rem;
+            min-height: 2rem;
+            font-weight: 600;
+        }
+
+        .status.win {
+            color: #4ade80;
+        }
+        .status.lose {
+            color: #f97373;
+        }
+
+        .stats {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .actions {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .app-shell {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-shell">
+        <h1>Number Guessing Game</h1>
+        <p class="muted">
+            I collaborated with AI to build this mini web app.
+            Guess a secret number between <strong>1</strong> and <strong>100</strong>.
+            You get 7 attempts!
+        </p>
+
+        <form id="guessForm">
+            <input type="number" id="guessInput" min="1" max="100" required placeholder="Enter your guess…">
+            <button type="submit">Guess</button>
+        </form>
+
+        <div id="status" class="status"></div>
+        <div id="stats" class="stats"></div>
+
+        <div class="actions">
+            <button type="button" id="newGameBtn">New Game</button>
+            <a href="scratch.html" class="link">← Back to Scratch Page</a>
+        </div>
+    </div>
+
+    <script>
+        // All logic in this single file
+        let secretNumber;
+        let attemptsLeft;
+        let totalGames = 0;
+        let gamesWon = 0;
+
+        const statusEl = document.getElementById('status');
+        const statsEl = document.getElementById('stats');
+        const guessInput = document.getElementById('guessInput');
+        const guessForm = document.getElementById('guessForm');
+        const newGameBtn = document.getElementById('newGameBtn');
+
+        function startGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attemptsLeft = 7;
+            statusEl.textContent = 'Game started! Make your first guess.';
+            statusEl.className = 'status';
+            updateStats();
+            guessInput.value = '';
+            guessInput.disabled = false;
+        }
+
+        function updateStats() {
+            statsEl.textContent =
+                `Attempts left: ${attemptsLeft} · Games played: ${totalGames} · Games won: ${gamesWon}`;
+        }
+
+        guessForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (attemptsLeft <= 0) return;
+
+            const guess = parseInt(guessInput.value, 10);
+            if (isNaN(guess) || guess < 1 || guess > 100) {
+                statusEl.textContent = 'Please enter a number between 1 and 100.';
+                statusEl.className = 'status';
+                return;
+            }
+
+            attemptsLeft--;
+
+            if (guess === secretNumber) {
+                statusEl.textContent = `🎉 Correct! The number was ${secretNumber}.`;
+                statusEl.className = 'status win';
+                gamesWon++;
+                totalGames++;
+                attemptsLeft = 0;
+                guessInput.disabled = true;
+            } else if (attemptsLeft === 0) {
+                statusEl.textContent = `Out of attempts! The number was ${secretNumber}.`;
+                statusEl.className = 'status lose';
+                totalGames++;
+                guessInput.disabled = true;
+            } else if (guess < secretNumber) {
+                statusEl.textContent = 'Too low! Try a larger number.';
+                statusEl.className = 'status';
+            } else {
+                statusEl.textContent = 'Too high! Try a smaller number.';
+                statusEl.className = 'status';
+            }
+
+            updateStats();
+            guessInput.value = '';
+            guessInput.focus();
+        });
+
+        newGameBtn.addEventListener('click', startGame);
+
+        // start first game
+        startGame();
+    </script>
+</body>
+</html>
